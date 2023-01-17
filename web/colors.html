@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colors</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<label id="0">
+    <input type="color" value="#ffffff">
+    <button>&nbsp;&nbsp;&nbsp;&nbsp;</button>
+</label>
+<label id="1">
+    <input type="color" value="#ff0000">
+    <button>&nbsp;&nbsp;&nbsp;&nbsp;</button>
+</label>
+<label id="2">
+    <input type="color" value="#00ff00">
+    <button>&nbsp;&nbsp;&nbsp;&nbsp;</button>
+</label>
+<label id="3">
+    <input type="color" value="#0000ff">
+    <button>&nbsp;&nbsp;&nbsp;&nbsp;</button>
+</label>
+<script>
+    let body = document.querySelector("body")
+    let sel = document.querySelectorAll("label")
+    body.onload = () => {
+        for (let s of sel) {
+            s.children[1].onclick = () => {
+                body.style.backgroundColor = s.children[0].value
+            }
+        }
+    }
+</script>
+</body>
+</html>
