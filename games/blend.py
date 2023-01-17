@@ -1,6 +1,7 @@
 from typing import Union, List
 
 import bpy
+from mathutils import Vector
 
 from games.scripts.modules.bpy_types import Object, Mesh
 
@@ -9,6 +10,7 @@ bpy.ops.wm.open_mainfile("EXEC_DEFAULT", filepath="D:\\Yel\\Python\\test_project
 objs: List[Object] = list(bpy.data.objects)
 
 for obj in objs:
+    obj.location: Vector
     print(obj.data.original, obj.location)
     if hasattr(obj.data, "vertices"):
         print("\t", end="")
