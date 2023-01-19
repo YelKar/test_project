@@ -2,22 +2,18 @@ from turtle import Turtle, exitonclick
 
 
 def task2():
-    f = lambda w, x, y, z: ((x and y) or (y and z)) == ((x <= w) and (w <= z))
-
     print("x y z w")
 
     for x in range(2):
         for y in range(2):
             for z in range(2):
                 for w in range(2):
-                    if f(w, x, y, z) and x == 0:
+                    if _task2(w, x, y, z) and x == 0:
                         print(x, y, z, w)
 
 
-def _task5(n):
-    bin_n = bin(n)[2:-1]
-    bin_n += "10" if n % 2 else "01"
-    return int(bin_n, 2)
+def _task2(w, x, y, z):
+    return ((x and y) or (y and z)) == ((x <= w) and (w <= z))
 
 
 def task5():
@@ -26,6 +22,12 @@ def task5():
         if r == 2018:
             print(n, r)
             break
+
+
+def _task5(n):
+    bin_n = bin(n)[2:-1]
+    bin_n += "10" if n % 2 else "01"
+    return int(bin_n, 2)
 
 
 def task6():
@@ -84,6 +86,10 @@ def task15():
     pass
 
 
+def _task15(a: int):
+    pass
+
+
 def task16():
     def f(n):
         if n == 0:
@@ -113,7 +119,6 @@ def task17():
                 max_sum = max(max_sum, i + j)
 
     print(count, max_sum)
-
 
 
 def task24():
@@ -150,4 +155,4 @@ def get_dividers(n):
     return dividers
 
 
-task25()
+
