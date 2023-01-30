@@ -44,6 +44,10 @@ class TestClass(dict):
         self.__current_cycle += 1
         return result
 
+    @property
+    def par(self):
+        return 5
+
 
 iterator = TestClass(20, {1: 2, 2: 3, "3": 4})
 
@@ -52,3 +56,6 @@ for key, val in iterator:
     print(f"{key=:<3} {val=:<3}")
 
 print({1: iterator})
+
+print(iterator.par)
+iterator.par = 5
