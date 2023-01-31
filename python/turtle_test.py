@@ -1,70 +1,48 @@
 import asyncio
+import time
 from collections import Counter
 from turtle import Turtle, exitonclick
 
 
+def set_goto(self):
+    def goto(_x, _y):
+        Turtle.goto(self, _x, -_y)
+    return goto
+
+
 t = Turtle()
-size = 35
+t.goto = set_goto(t)
+size = 25
 up = 200
+time.sleep(2)
+t.speed(0)
+t.fillcolor("red")
 
-async def dots(step, pos_x=0, pos_y=0):
-    await asyncio.sleep(0.01)
-    dt = Turtle()
-    dt.speed(0)
-    dt.penup()
-    for x in range(-6, 11):
-        for y in range(-1, 16):
-            dt.goto(x * step + pos_x, -y * step + pos_y)
-            dt.dot(4)
-            await asyncio.sleep(0.01)
-        # await asyncio.sleep(0.01)
+t.begin_fill()
+t.lt(90)
+for i in range(12):
+    t.rt(60)
+    t.fd(2 * size)
+    t.rt(60)
+    t.fd(2 * size)
+    t.rt(270)
 
+t.end_fill()
 
-def check(step):
-    over = []
-    cvs = t.screen.getcanvas()
-    for x in range(-10 * step, 20 * step, step):
-        for y in range(-10 * step, 20 * step, step):
+t.up()
+cvs = t.screen.getcanvas()
+c = 0
+t.hideturtle()
+for x in range(-5, 10):
+    for y in range(-15, 2):
+        pos = x * size, -y * size
+        overlap = cvs.find_overlapping(*pos, *pos)
+        t.goto(pos[0], pos[1])
+        if len(overlap) == 1 and overlap[0] == 5:
+            c += 1
+        if len(overlap) > 1:
+            print(overlap)
+        t.dot(3, "yellow" if 5 in overlap else "black")
 
-            # t.goto(x, y)
-            over.append(cvs.find_overlapping(x, y, x, y))
-        # await asyncio.sleep(0.01)
-    print(Counter(over)[(5,)])
-
-
-async def star():
-    t.speed(0)
-    t.up()
-    t.goto(0, up)
-    t.down()
-    t.fillcolor("red")
-
-    t.lt(90)
-    t.begin_fill()
-    for i in range(14):
-        t.rt(60)
-        await asyncio.sleep(0.01)
-        t.fd(2 * size)
-        await asyncio.sleep(0.01)
-        t.rt(60)
-        await asyncio.sleep(0.01)
-        t.fd(2 * size)
-        await asyncio.sleep(0.01)
-        t.rt(270)
-        await asyncio.sleep(0.01)
-
-    t.end_fill()
-
-
-async def main():
-    # task_dots = asyncio.create_task(dots(size, pos_y=up))
-    task_star = asyncio.create_task(star())
-
-    await task_star
-    # await task_dots
-
-
-asyncio.run(main())
-check(size)
-
+print(c)
 exitonclick()

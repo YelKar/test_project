@@ -4,8 +4,6 @@ from collections import Counter
 from itertools import pairwise
 from turtle import Turtle, exitonclick
 
-from numba import njit
-
 
 def task7():
     f = 4
@@ -81,9 +79,8 @@ def task6():
         t.rt(60)
         t.fd(2 * size)
         t.rt(270)
-
-
     t.up()
+
     for x in range(-6, 11):
         for y in range(-1, 16):
             t.goto(x * size, -y * size + up)
@@ -118,7 +115,6 @@ def task17():
             if (x + y) % 9 == 0:
                 c += 1
                 ms = max(ms, x + y)
-
 
     print(c, ms)
 
