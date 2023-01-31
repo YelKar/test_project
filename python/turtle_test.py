@@ -1,8 +1,9 @@
-import asyncio
 import time
-from collections import Counter
 from turtle import Turtle, exitonclick
 
+
+a =    7
+print(a, "sdjfkbscjhsbdkcksdkcjalskcnlasjkcjkasdbcksbdkjcbjsbdjkcbsdkcbskjdjbckjsdjbckjdsbjkcdbskjcjbdkscbsdjcbkjsdbckjsdbcbjksdbkcb")
 
 def set_goto(self):
     def goto(_x, _y):

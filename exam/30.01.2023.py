@@ -89,6 +89,7 @@ def task6():
     exitonclick()
 
 
+
 def task14():
     arr = []
     for x in range(8):
