@@ -1,9 +1,19 @@
-import time
-from turtle import Turtle, exitonclick
+from turtle import Turtle, done
 
 
-a =    7
-print(a, "sdjfkbscjhsbdkcksdkcjalskcnlasjkcjkasdbcksbdkjcbjsbdjkcbsdkcbskjdjbckjsdjbckjdsbjkcdbskjcjbdkscbsdjcbkjsdbckjsdbcbjksdbkcb")
+t = Turtle()
+t.onclick(lambda *_: exit())
+t.up()
+t.goto(-20, 220)
+t.shape("turtle")
+t.fillcolor("green")
+t.rt(90)
+t.shapesize(3)
+t.pensize(4)
+t.write("Quit", move=False, align="left", font=("Arial", 20, "normal"))
+
+t.goto(0, 200)
+
 
 def set_goto(self):
     def goto(_x, _y):
@@ -13,9 +23,10 @@ def set_goto(self):
 
 t = Turtle()
 t.goto = set_goto(t)
+t.screen.tracer(10)
 size = 25
 up = 200
-time.sleep(2)
+
 t.speed(0)
 t.fillcolor("red")
 
@@ -33,7 +44,6 @@ t.end_fill()
 t.up()
 cvs = t.screen.getcanvas()
 c = 0
-t.hideturtle()
 for x in range(-5, 10):
     for y in range(-15, 2):
         pos = x * size, -y * size
@@ -43,7 +53,7 @@ for x in range(-5, 10):
             c += 1
         if len(overlap) > 1:
             print(overlap)
-        t.dot(3, "yellow" if 5 in overlap else "black")
+        t.dot(3, "yellow" if (9,) == overlap else "black")
 
 print(c)
-exitonclick()
+done()
