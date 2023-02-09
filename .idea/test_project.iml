@@ -10,8 +10,9 @@
       <excludeFolder url="file://$MODULE_DIR$/venv_pypy" />
       <excludeFolder url="file://$MODULE_DIR$/virtual_environments" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/virtual_envs/venv" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (test_project)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
