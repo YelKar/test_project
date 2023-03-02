@@ -1,4 +1,5 @@
 class TestClass(dict):
+    __match_args__ = ("",)
     __current_cycle = 0
     __iter = None
     __count = 0
@@ -47,6 +48,10 @@ class TestClass(dict):
     @property
     def par(self):
         return 5
+
+    @par.setter
+    def par(self, other):
+        print("Set par = {}".format(other))
 
 
 iterator = TestClass(20, {1: 2, 2: 3, "3": 4})
