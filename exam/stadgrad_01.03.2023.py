@@ -4,7 +4,6 @@
 5_3: 233024691 time=?
 """
 import timeit
-
 from numba import prange, njit
 
 
