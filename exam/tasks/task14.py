@@ -10,4 +10,10 @@ def task48390():
     print(min(result) // 89)
 
 
+
+def stad():
+    def f(x: int):
+        pass
+
+
 task48390()

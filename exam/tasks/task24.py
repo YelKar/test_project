@@ -138,4 +138,8 @@ def task33769():
     print(Counter(count))
 
 
+def stad():
+    pass
+
+
 task33769()

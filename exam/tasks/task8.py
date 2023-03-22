@@ -1,3 +1,6 @@
+import itertools
+
+
 def task_egkr():
     even = set(range(0, 7, 2))
     odd = set(range(1, 7, 2))
@@ -22,4 +25,7 @@ def svn(n: int):
     return s
 
 
-task_egkr()
+def stad():
+    pass
+
+

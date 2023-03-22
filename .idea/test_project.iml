@@ -19,7 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/virtual_environments/venv3.11" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (test_project)" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Python 3.11 (test_project) interpreter library" level="application" />
   </component>

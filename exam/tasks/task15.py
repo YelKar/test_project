@@ -49,4 +49,17 @@ def task34517():
             break
 
 
-task34517()
+def stad():
+    def f():
+        return (x & 35 != 0 or x & 22 != 0) <= ((x & 15 == 0) <= (x & A != 0))
+
+    for A in range(1, 1000):
+        for x in range(10000):
+            if not f():
+                break
+        else:
+            print(A)
+            break
+
+
+stad()
