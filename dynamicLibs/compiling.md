@@ -1,5 +1,6 @@
 # C
 
+## Windows
 ## ```.c``` -> ```.o```
 
 ### x32
@@ -23,4 +24,8 @@ gcc -shared -L"/Yel/interpreters/Python3.11/libs" -o module.cp311-win_amd64.pyd 
 gcc -shared -DMS_WIN64 -Ofast -I"/Yel/interpreters/Python3.11/include" -L"/Yel/interpreters/Python3.11/libs" -o module.pyd -fPIC module.c -lpython311
 ```
 
+## Linux
+```commandline
+gcc -shared -o module.so module.c -I"/usr/include/python3.10" -fPIC
+```
 [//]: # (TODO for linux)
