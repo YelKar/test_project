@@ -1,6 +1,4 @@
-from ctypes import cdll
+import module
 
 
-lib = cdll.LoadLibrary("./main.so")
-
-lib.main()
+print(module.foo())
