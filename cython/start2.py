@@ -1,4 +1,4 @@
 import main
 
 
-print(main.cache_fib(3403))
+print(main.cache_fib(343))
