@@ -1,4 +1,4 @@
-# code
+# C module for Python
 ### include libraries
 #### You must to include Python.h
 ```c
