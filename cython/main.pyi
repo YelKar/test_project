@@ -1,11 +1,8 @@
-def cfib(n: int) -> int:
+def cfib(n: int):
     pass
 
-def fib(n: int) -> int:
+def fib(n: int):
     pass
 
 def fib2(n: int):
-    pass
-
-def cache_fib(n: int):
     pass

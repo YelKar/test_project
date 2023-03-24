@@ -1,1 +1,1 @@
-import main
+print("Hello")

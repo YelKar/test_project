@@ -1,21 +1,22 @@
 #include <Python.h>
+#include "vector"
 
 // fib(fib_max_num) more than max unsigned long long number
-#define fib_max_num 94
 #define trib_max_num 94
-unsigned long long fib_mem[fib_max_num];
+vector<unsigned long long> fib_mem;
 unsigned long long trib_mem[trib_max_num];
 
 
 unsigned long long _fib(int n) {
-    unsigned long long m = fib_mem[n];
-    if (m) {
-        return m;
+    if (fib_mem.size() > n) {
+        return fib_mem[n];
     }
     if (n <= 2) {
         return 1;
     }
-    return fib_mem[n] = _fib(n - 1) + _fib(n - 2);
+    unsigned long long m = _fib(n - 1) + _fib(n - 2);
+    fib_mem.push_back(m);
+    return m;
 }
 
 
@@ -56,8 +57,7 @@ static PyModuleDef module = {
     module_methods
 };
 
-PyMODINIT_FUNC PyInit_module() {
-    memset(fib_mem, 0, fib_max_num*sizeof(unsigned long long));
+PyMODINIT_FUNC PyInit_cpp_mod() {
     memset(trib_mem, 0, trib_max_num*sizeof(unsigned long long));
     return PyModule_Create(&module);
 }

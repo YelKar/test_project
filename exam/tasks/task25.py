@@ -1,4 +1,8 @@
+import itertools
+import re
 import timeit
+from re import Pattern
+from typing import Union
 
 
 def task27850():
@@ -82,4 +86,37 @@ def task27855():
             print(divs)
 
 
-task27855()
+def stad():
+    """1?7246*1"""
+    exp = re.compile(r"^1\d7246\d*1$")
+    exp2 = re.compile(r"^1\d2655\d*8$")
+
+    def search(rexp: Union[str, Pattern]):
+        start = 1072461
+        for i in range(start - start % 4173, 10 ** 10, 4173):
+            if re.match(rexp, str(i)):
+                print(i)
+
+    print("1:")
+    search(exp)
+    print("2:")
+    search(exp2)
+
+
+def task27856():
+    r = range(95_632, 95_651)
+
+    def dividers(n_: int):
+        for i_ in range(1, n_//2 + 1, 2):
+            if n_ % i_ == 0:
+                yield i_
+        if n_ % 2 == 1:
+            yield n_
+
+    for i in r:
+        divs = list(dividers(i))
+        if len(divs) == 6:
+            print(*divs)
+
+
+task27856()

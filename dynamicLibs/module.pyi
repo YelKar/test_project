@@ -12,3 +12,19 @@ def fibonacci(n: int) -> int:
     :return:
     """
     pass
+
+
+def tribonacci(n: int) -> int:
+    """
+    return tribonacci number
+    tribonacci -> 1 1 1 3 5 9 17 31 57 105 193 355 653 1201 2209 4063 7473 13745 25281 46499 ...
+
+    >>> tribonacci(2)
+    1
+    >>> tribonacci(5) == tribonacci(2) + tribonacci(3) + tribonacci(4)
+    True
+
+    :param n:
+    :return:
+    """
+    pass
