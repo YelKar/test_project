@@ -12,7 +12,7 @@ unsigned long long _fib(unsigned long long n) {
         return m;
     }
     if (n <= 2) {
-        return 1;
+        return !!n;
     }
     return mem[n] = _fib(n - 1) + _fib(n - 2);
 }
