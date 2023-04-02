@@ -142,4 +142,32 @@ def stad():
     pass
 
 
-task33769()
+def stad():
+    with open("files/24_stad.txt", "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    def max_len_let(num, line_: str):
+        mx = ()
+        c = 1
+        prev = line_[0]
+        for ch in line_[1:] + " ":
+            if ch == prev:
+                c += 1
+            else:
+                mx = max(mx, (c, prev))
+                c = 1
+                prev = ch
+        return mx + (num,)
+
+    mxs = list(map(lambda x: max_len_let(*x), enumerate(lines)))
+    mx_len = max(mxs)[0]
+    mxs = list(filter(lambda x: x[0] == mx_len, mxs))
+    print(mxs)
+    res_mx = 0
+    for _, let, line_num in mxs:
+        res_mx = max(res_mx, lines[line_num].count(let))
+
+    print(res_mx)
+
+
+stad()

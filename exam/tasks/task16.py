@@ -1,17 +1,44 @@
-def stad():
-    def f(a, b):
-        if a == b == 0:
+def task33188():
+    def f(n: int):
+        if n == 0:
             return 0
-        if a > b:
-            return f(a - 1, b) + b
-        return f(a, b - 1) + a
+        if n % 3 == 0:
+            return n + f(n - 3)
+        return n + f(n - (n % 3))
 
-    c = 1
-
-    for i in range(1, 1_048_576 // 2 + 1):
-        if 1_048_576 % i == 0:
-            c += 1
-    print(c)
+    print(f(22))
 
 
-stad()
+def task4558():
+    def f(n: int):
+        return n == 1 or f(n - 1) * n
+
+    print(f(5))
+
+
+def task38591():
+    def f(n: int):
+        if n == 1:
+            return 1
+        if n % 2 == 0:
+            return n + f(n - 1)
+        return 2 * f(n - 2)
+
+    print(f(26))
+
+
+def task4644():
+    def f(n: int):
+        return n == 1 or f(n - 1) * f(n - 1) - f(n - 1) * n + 2 * n
+
+    print(f(4))
+
+
+for name, func in list(
+    filter(
+        lambda x: x[0].startswith("task"),
+        globals().items()
+    )
+):
+    print(f"{name} => ", end="")
+    func()

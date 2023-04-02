@@ -30,4 +30,67 @@ def task5977(n: int):
     return task5977(n - 1)
 
 
-print(task5977(33))
+def task6241():
+    def f(a: int, b: int):
+        if a == b:
+            return 1
+        if a > b:
+            return 0
+        return f(a, b - 1) + f(a, b - 3)
+
+    print(f(17, 30))
+
+
+def task18801():
+    def f(a: int, b: int):
+        if a == b:
+            return 1
+        if a > b:
+            return 0
+        return \
+            f(a, b // 3) * (b % 3 == 0) \
+            + f(a, b - 1) \
+            + f(a, b - 2)
+
+    print(f(2, 9) * f(9, 11) * f(11, 12))
+
+
+def task16825():
+    def f(a: int, b: int):
+        if a == b:
+            return 1
+        if a > b or b in (6, 12):
+            return 0
+        return f(a, b - 1) + f(a, b - 3) + \
+            f(a, b // 2) * (b % 2 == 0)
+
+    print(f(3, 16))
+
+
+def task_stad():
+    def f(a, b, mul=False):
+        if a == b:
+            return 1
+        if a > b:
+            return 0
+        return (
+            (
+                f(a, b // 3, True) * (b % 3 == 0)
+                + f(a, b // 2, True) * (b % 2 == 0)
+            ) * (not mul)
+            + f(a, b - 1, mul)
+            + f(a, b - 2, mul)
+        )
+
+    print(f(1, 11) - f(1, 11, True))
+
+
+for name, func in list(
+        filter(
+            lambda x: x[0].startswith("task"),
+            globals().items()
+        )
+):
+    if not func.__annotations__:
+        print(f"{name} => ", end="")
+        func()

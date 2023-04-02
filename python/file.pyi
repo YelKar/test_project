@@ -1,3 +1,3 @@
-def foo(a: int):
+def foo(a: str):
     """HEllo"""
     print(a)

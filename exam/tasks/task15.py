@@ -62,4 +62,31 @@ def stad():
             break
 
 
-stad()
+def task34510():
+    """x&25 ≠ 0 → (x&9 = 0 → x&А ≠ 0)"""
+    print(task34510.__doc__)
+
+    def f():
+        return eval(
+            task34510.
+            __doc__.
+            replace("→", "<=").
+            replace("≠", "!=").
+            replace("=", "==")
+        )
+
+    for a in range(int(1e10)):
+        for x in range(1000):
+            if not f():
+                break
+        else:
+            print(a)
+            break
+
+
+def task34509():
+    def f():
+        return
+
+
+task34510()
