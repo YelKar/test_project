@@ -11,7 +11,7 @@ def count3(n_: int):
     return c
 
 
-with open("files/27-B_stad.txt", "r", encoding="utf-8") as f:
+with open("../files/27-A_stad.txt", "r", encoding="utf-8") as f:
     *nums, = map(int, f.readlines()[1:])
 
 
@@ -25,7 +25,12 @@ print(*map(
     enumerate(mt, 0)
 ), "_ % 8", sep="\n")
 
-
-for x, y in zip(mt[1:5], mt[4:]):
+res = [0 for _ in range(8)]
+for x, y in zip(mt[1:5], mt[:4:-1]):
+    print(x, y)
     for ind, (i, j) in enumerate(zip(x, y)):
-        pass
+        res[ind] += i * j
+        # print(i, j)
+
+
+print(res)

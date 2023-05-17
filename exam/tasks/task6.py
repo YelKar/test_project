@@ -58,4 +58,25 @@ def task47309():
             t.dot(3, "red")
 
 
-task47309()
+def task47301():
+    from turtle import Turtle, exitonclick, tracer
+
+    tracer(10)
+
+    t = Turtle()
+    t.lt(90)
+    size = 40
+
+    for i in range(5):
+        t.forward(7 * size)
+        t.right(120)
+
+    t.penup()
+    for x in range(7):
+        for y in range(8):
+            t.goto(x * size, y * size)
+            t.dot(3)
+    exitonclick()
+
+
+task47301()

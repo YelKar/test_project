@@ -97,7 +97,7 @@ def task7():
 
 
 def task8():
-    with open("tasks/files/17_37344.txt", "r", encoding="utf-8") as f:
+    with open("files/17_37344.txt", "r", encoding="utf-8") as f:
         nums = list(map(int, f))
 
     c = 0

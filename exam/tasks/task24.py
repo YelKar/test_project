@@ -4,7 +4,7 @@ from collections import Counter
 
 
 def task_egkr():
-    with open("files/24.txt", "r", encoding="utf-8") as f:
+    with open("../files/24.txt", "r", encoding="utf-8") as f:
         letters = f.read().strip()
 
     variants = [
@@ -49,12 +49,12 @@ def task_egkr_iter(*args):
 
 def task27688():
     exp = re.compile(r"Z+")
-    with open("files/24_27688.txt") as f:
+    with open("../files/24_27688.txt") as f:
         print(max(map(lambda x: x.end() - x.start(), re.finditer(exp, f.read().strip()))))
 
 
 def task27690():
-    with open("files/24_27690.txt") as f:
+    with open("../files/24_27690.txt") as f:
         let = f.read().strip()
 
     c = 1
@@ -72,7 +72,7 @@ def task27690():
 
 def task27699():
     exp = re.compile(r"(LDR)+(LD|L)?")
-    with open("files/24_27699.txt") as f:
+    with open("../files/24_27699.txt") as f:
         let = f.read().strip()
 
     all_found = re.finditer(exp, let)
@@ -84,7 +84,7 @@ def task27699():
 
 
 def task29672():
-    with open("files/24_29672.txt") as f:
+    with open("../files/24_29672.txt") as f:
         lines = f.readlines()
 
     c = 0
@@ -98,7 +98,7 @@ def task29672():
 def task33494():
     exp = re.compile(r"E\w")
     
-    with open("files/24_33494.txt") as f:
+    with open("../files/24_33494.txt") as f:
         found = re.finditer(exp, f.read())
 
     print(Counter(
@@ -110,7 +110,7 @@ def task33494():
 
 
 def task33526():
-    with open("files/24_33526.txt") as f:
+    with open("../files/24_33526.txt") as f:
         let = f.read().strip()
 
     counter = {}
@@ -126,7 +126,7 @@ def task33526():
 
 
 def task33769():
-    with open("files/24_33769.txt") as f:
+    with open("../files/24_33769.txt") as f:
         let = f.read().strip()
 
     count = []
@@ -143,7 +143,7 @@ def stad():
 
 
 def stad():
-    with open("files/24_stad.txt", "r", encoding="utf-8") as f:
+    with open("../files/24_stad.txt", "r", encoding="utf-8") as f:
         lines = f.readlines()
 
     def max_len_let(num, line_: str):

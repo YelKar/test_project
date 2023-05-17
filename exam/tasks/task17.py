@@ -1,3 +1,4 @@
+from math import inf
 from typing import Iterable
 
 
@@ -7,7 +8,7 @@ def pairwise(it: Iterable):
 
 
 def stad():
-    with open("files/17_stad.txt", "r", encoding="utf-8") as f:
+    with open("../files/17_stad.txt", "r", encoding="utf-8") as f:
         nums = list(map(int, f))
 
     mn = min(filter(lambda _x: abs(_x) % 10 == 3, nums))
@@ -26,4 +27,23 @@ def stad():
     print(c, mx)
 
 
-stad()
+def task55813():
+    with open("../files/17_55813.txt") as f:
+        *nums, = map(int, f)
+
+    def len3(n: int):
+        return 100 <= n < 1000
+
+    mn = min(filter(lambda i: len3(i) and i % 10 == 5, nums))
+
+    mn_sm = inf
+    c = 0
+    for x in zip(nums, nums[1:]):
+        *ln, = map(len3, x)
+        if any(ln) and not all(ln) and sum(x) % mn == 0:
+            c += 1
+            mn_sm = min(mn_sm, sum(x))
+    print(c, mn_sm)
+
+
+task55813()

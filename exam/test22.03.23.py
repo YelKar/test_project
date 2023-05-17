@@ -109,7 +109,7 @@ def task16():  # 256
 
 
 def task17():
-    with open("tasks/files/17_22.03.23.txt", "r", encoding="utf-8") as f:
+    with open("files/17_22.03.23.txt", "r", encoding="utf-8") as f:
         *nums, = map(int, f)
 
     mx = 0

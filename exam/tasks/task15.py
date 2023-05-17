@@ -89,4 +89,22 @@ def task34509():
         return
 
 
-task34510()
+def task34518():
+    def f():
+        return (x & A != 0) <= ((x & 36 == 0) <= (x & 6 != 0))
+
+    for A in range(999462, -1, -1):
+        flag = True
+        for x in range(10000):
+            for y in range(10000):
+                if not f():
+                    flag = False
+                    break
+            if not flag:
+                break
+        else:
+            print(A)
+            break
+
+
+task34518()

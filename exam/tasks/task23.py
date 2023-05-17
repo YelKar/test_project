@@ -85,6 +85,24 @@ def task_stad():
     print(f(1, 11) - f(1, 11, True))
 
 
+def task28697():
+    def f(a: int, b: int):
+        if a == b:
+            return 1
+        if a > b:
+            return 0
+        return ((b % 2 == 0) and f(a, b // 2)) + f(a, b - 1)
+
+    print(f(2, 11) * f(11, 25) * f(25, 50))
+
+
+def task4944():
+    def f(a: int, b: int):
+        return (a == b) or a < b and (f(a, b - 1) + f(a, b - 3))
+
+    print(f(2, 15))
+
+
 for name, func in list(
         filter(
             lambda x: x[0].startswith("task"),

@@ -76,7 +76,7 @@ def task6():
 
 def task7():
     k = 43
-    with open("tasks/files/27_B.txt") as f:
+    with open("files/27_B.txt") as f:
         n, *nums = list(map(int, f))
         print(n)
 
