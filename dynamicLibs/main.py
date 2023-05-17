@@ -1,4 +1,9 @@
-import cpp_mod
+from module import fibonacci
 
 
-print(*(cpp_mod.tribonacci(i) for i in range(20)))
+for i in range(0, 1000):
+    fib = fibonacci(i)
+    print(fib, end=" ")
+    if fib > 1000:
+        print("\n", i, fib)
+        break
